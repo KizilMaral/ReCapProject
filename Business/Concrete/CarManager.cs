@@ -3,10 +3,13 @@ using System;
 using System.Collections.Generic;
 using Business.Abstract;
 using Business.Constant;
+using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Validation;
 using Core.Utilities;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using Entities.DTOs;
+using FluentValidation;
 
 namespace Business.Concrete
 {
@@ -19,18 +22,13 @@ namespace Business.Concrete
         }
 
         
-
+        [ValidationAspect(typeof(CarValidator))]
         public IResults Add(Car car)
         {
-            if(car.Description.Length > 2 && car.DailyPrice != 0)
-            {
-                _carDal.Add(car);
-                return new SuccessResult(Messages.CarAdded);
-            }
-            else
-            {
-                return new ErrorResult(Messages.CarNameInvalid);
-            }
+            
+            _carDal.Add(car);
+            return new SuccessResult(Messages.CarAdded);
+                
             
         }
 
@@ -56,7 +54,10 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Car>>(_carDal.GetAll(),Messages.CarsListed);
         }
 
-        
+        public IDataResult<Car> GetById(int id)
+        {
+            return new SuccessDataResult<Car>(_carDal.Get(p => p.Id == id),Messages.CarsListed);
+        }
 
         public IDataResult<List<Car>> GetCarsByBrandId(int id)
         {

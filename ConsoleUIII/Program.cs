@@ -15,9 +15,12 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-
-            UserManager usrmngr = new UserManager(new EfUserDal());
-            Console.WriteLine(usrmngr.Add(new User { Id = 5, FirstName = "Ahmet123", LastName = "Sağlam213123", Email = "Ahmtsglm@gmail.com", Password = "ahmt1791" }).Message);
+            RentalManager crmngr = new RentalManager(new EfRentalDal());
+            var result = crmngr.GetAll();
+            foreach (var item in result.Data)
+            {
+                Console.WriteLine(item.RentDate.Year + "-"+ item.RentDate.Month+ "-" + item.RentDate.Day);
+            }
             Console.ReadKey();
         }
 

@@ -1,5 +1,7 @@
 ﻿using Business.Abstract;
 using Business.Constant;
+using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Validation;
 using Core.Utilities;
 using DataAccess.Abstract;
 using DataAccess.Concrete.EntitiyFrameWork;
@@ -19,6 +21,7 @@ namespace Business.Concrete
         {
             _customerDal = customerDal;
         }
+        [ValidationAspect(typeof(CustomerValidator))]
         public IResults Add(Customer entity)
         {
             if((new EfUserDal().GetAll().SingleOrDefault(p=>p.Id == entity.UserId)) != default)

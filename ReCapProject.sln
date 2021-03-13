@@ -7,13 +7,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleUI", "ConsoleUIII\Co
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "CarsDatabase", "..\CarsDatabase\CarsDatabase.sqlproj", "{6101336D-70A4-46D8-A1D5-7855927747DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities", "Entities\Entities.csproj", "{494C5652-2396-49F7-BC10-E64885FB5407}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entities", "Entities\Entities.csproj", "{494C5652-2396-49F7-BC10-E64885FB5407}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{0C295F18-C523-4CCF-B8FE-823C17DD3229}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess", "DataAccess\DataAccess.csproj", "{0C295F18-C523-4CCF-B8FE-823C17DD3229}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business", "Business\Business.csproj", "{1B790D27-8C64-407F-850F-D89577EB6102}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Business", "Business\Business.csproj", "{1B790D27-8C64-407F-850F-D89577EB6102}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{70098052-F094-4173-857E-F2FBA6BBA98E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "Core\Core.csproj", "{70098052-F094-4173-857E-F2FBA6BBA98E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPI", "WebAPI\WebAPI.csproj", "{433ABB92-AC31-4CEA-8EA7-F05189586126}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +49,10 @@ Global
 		{70098052-F094-4173-857E-F2FBA6BBA98E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{70098052-F094-4173-857E-F2FBA6BBA98E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{70098052-F094-4173-857E-F2FBA6BBA98E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{433ABB92-AC31-4CEA-8EA7-F05189586126}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{433ABB92-AC31-4CEA-8EA7-F05189586126}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{433ABB92-AC31-4CEA-8EA7-F05189586126}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{433ABB92-AC31-4CEA-8EA7-F05189586126}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

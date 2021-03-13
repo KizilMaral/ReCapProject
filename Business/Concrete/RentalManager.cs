@@ -1,9 +1,12 @@
 ﻿using Business.Abstract;
 using Business.Constant;
+using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Validation;
 using Core.Utilities;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using Entities.DTOs;
+using FluentValidation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,9 +21,11 @@ namespace Business.Concrete
         {
             _rentalDal = rentalDal;
         }
+        [ValidationAspect(typeof(RentalValidator))]
         public IResults Add(Rental entity)
         {
-            if(_rentalDal.GetAll(p=>p.CarId == entity.CarId).SingleOrDefault(p=>p.ReturnDate == default/*null*/ ) == default ||  _rentalDal.GetAll().Count == 0  )  
+            
+            if (_rentalDal.GetAll(p=>p.CarId == entity.CarId).SingleOrDefault(p=>p.ReturnDate == default/*null*/ ) == default ||  _rentalDal.GetAll().Count == 0  )  
             {
                 _rentalDal.Add(entity);
                 return new SuccessResult(Messages.RentalAdded);
